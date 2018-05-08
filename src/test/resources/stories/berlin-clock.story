@@ -44,28 +44,27 @@ RRRR
 OOOOOOOOOOO
 OOOO
 
-
-Scenario: Invalid Time
+Scenario: Invalid Time Instance 1
 When the time is 24:01:00
 Then error message should be shown
-Invalid time provided 
+Incorrect time for conversion
 
-Scenario: Invalid Time
+Scenario: Invalid Time Instance  2
 When the time is 24:00:45
 Then error message should be shown
-Invalid time provided 
+Incorrect time for conversion
 
-Scenario: Invalid Time
+Scenario: Invalid Time Instance 3
 When the time is 25:00:00
 Then error message should be shown
-Hours can not exceed more than value of 24
+Incorrect time for conversion
 
-Scenario: Invalid Time
+Scenario: Invalid Time  Instance 4
 When the time is 20:66:00
 Then error message should be shown
-Minutes can not exceed more than value of 60 
+Incorrect time for conversion
 
-Scenario: Invalid Time
+Scenario: Invalid Time Instance 5
 When the time is 20:00:85
 Then error message should be shown
-Seconds can not exceed more than value of 60 
+Incorrect time for conversion
