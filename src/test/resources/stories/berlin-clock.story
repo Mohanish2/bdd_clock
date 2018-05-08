@@ -45,4 +45,27 @@ OOOOOOOOOOO
 OOOO
 
 
+Scenario: Invalid Time
+When the time is 24:01:00
+Then error message should be shown
+Invalid time provided 
 
+Scenario: Invalid Time
+When the time is 24:00:45
+Then error message should be shown
+Invalid time provided 
+
+Scenario: Invalid Time
+When the time is 25:00:00
+Then error message should be shown
+Hours can not exceed more than value of 24
+
+Scenario: Invalid Time
+When the time is 20:66:00
+Then error message should be shown
+Minutes can not exceed more than value of 60 
+
+Scenario: Invalid Time
+When the time is 20:00:85
+Then error message should be shown
+Seconds can not exceed more than value of 60 
