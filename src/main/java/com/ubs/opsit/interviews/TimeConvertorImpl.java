@@ -1,12 +1,23 @@
 package com.ubs.opsit.interviews;
 
+import java.util.Arrays;
+
 public class TimeConvertorImpl implements TimeConverter {
 
-	private final char[] topRowLamp = new char[1];
+	private char[] topRowLamp = new char[1];
 	private final char[] fiveHoursRowLamps = new char[4];
 	private final char[] oneHourRowLamps = new char[4];
 	private final char[] fiveMinutesRowLamps = new char[11];
 	private final char[] oneMinuteRowLamps = new char[4];
+	
+	TimeConvertorImpl(){
+		Arrays.fill(topRowLamp, 'O');
+		Arrays.fill(fiveHoursRowLamps, 'O');
+		Arrays.fill(oneHourRowLamps, 'O');
+		Arrays.fill(fiveMinutesRowLamps, 'O');
+		Arrays.fill(oneMinuteRowLamps, 'O');
+	}
+	
 	
 	@Override
 	public String convertTime(String inputTime) {
@@ -34,8 +45,10 @@ public class TimeConvertorImpl implements TimeConverter {
 		int countLampsFiveMinutesRow = minutes / 5;
 		int countLampsOneMinutesRow = minutes % 5;
 		
-		if(seconds%2 == 0) {
+		if(seconds % 2 == 0) {
 			topRowLamp[0] = 'Y';
+		}else{
+			topRowLamp[0] = '0';
 		}
 		for(int i = 0;i<countLampsFiveHourRow; i++) {
 			fiveHoursRowLamps[i] = 'R';
